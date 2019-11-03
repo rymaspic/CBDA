@@ -20,7 +20,6 @@ public class DataClean {
 
         private final static IntWritable one = new IntWritable(1);
 
-        @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException, ParseException{
             String line = value.toString();
             line = line.replace("\"", ""); //clean the "\"" produced by csv
