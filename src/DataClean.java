@@ -5,6 +5,7 @@ import java.util.*;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -18,7 +19,6 @@ public class DataClean {
             extends Mapper<LongWritable, Text, Text, IntWritable> {
 
         private final static IntWritable one = new IntWritable(1);
-        private String[] targets = {"hackathon", "dec", "java", "hadoop"};
 
         public void map(LongWritable key, Text value, Context context) throws Exception {
             String line = value.toString();
