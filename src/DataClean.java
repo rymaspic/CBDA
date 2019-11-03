@@ -20,7 +20,8 @@ public class DataClean {
 
         private final static IntWritable one = new IntWritable(1);
 
-        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException, ParseException{
+        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
+           try {
             String line = value.toString();
             line = line.replace("\"", ""); //clean the "\"" produced by csv
             //257,"2017-11-01 00:04:45","2017-11-01 00:09:02",505,"6 Ave & W 33 St",40.74901271,-73.98848395,477,"W 41 St & 8 Ave",40.75640548,-73.9900262,14860,"Customer",NULL,0
@@ -31,7 +32,7 @@ public class DataClean {
             String[] Date = oriDate.split(" ");
             String format = "yyyy-MM-dd";
             SimpleDateFormat df = new SimpleDateFormat(format);
-            java.util.Date date = df.parse(Date[0]); //2017-11-01
+            Date date = df.parse(Date[0]); //2017-11-01
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             int weekNum = cal.get(Calendar.DAY_OF_WEEK); // 1 represents Monday...
@@ -59,6 +60,12 @@ public class DataClean {
             //Output
             context.write(new Text(finalScheme), one);
              //{"2017-11-29,4,6,5 St & 6 Ave,40.6704836,-73.98208968",1} as {key,value}
+           }
+           catch (ParseException e)
+           {
+            e.printStackTrace();
+           }
+
         }
     }
 
