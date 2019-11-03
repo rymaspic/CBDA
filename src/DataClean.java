@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -20,7 +21,7 @@ public class DataClean {
         private final static IntWritable one = new IntWritable(1);
 
         @Override
-        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException, Exception{
+        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException, ParseException{
             String line = value.toString();
             line = line.replace("\"", ""); //clean the "\"" produced by csv
             //257,"2017-11-01 00:04:45","2017-11-01 00:09:02",505,"6 Ave & W 33 St",40.74901271,-73.98848395,477,"W 41 St & 8 Ave",40.75640548,-73.9900262,14860,"Customer",NULL,0
