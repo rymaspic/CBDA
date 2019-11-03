@@ -43,8 +43,8 @@ public class DataClean {
             String timePeriod = String.valueOf(i);
 
             //Process address
-            String address = tokens[4];
-            String geo = tokens[5] + "," + tokens[6];//lon,lat
+            String address = tokens[8];
+            String geo = tokens[9] + "," + tokens[10];//lon,lat
 
             //Concatenate time and address to be a output key
             List<String> result = new LinkedList<>();
