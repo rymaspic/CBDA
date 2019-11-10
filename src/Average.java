@@ -55,6 +55,8 @@ public class Average {
         job.setMapperClass(AveMapper.class);
         job.setCombinerClass(AveReducer.class);
         job.setReducerClass(AveReducer.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(IntWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(DoubleWritable.class);
         job.setNumReduceTasks(1);
