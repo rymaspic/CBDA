@@ -42,7 +42,7 @@ public class Average {
                 totalVolume = totalVolume + val.get();
                 totalCount = totalCount + 1;
             }
-            double aveVolume = (double)totalVolume / (double)totalCount;
+            (double) aveVolume = (double)totalVolume / (double)totalCount;
             DoubleWritable result = new DoubleWritable(aveVolume);
             context.write(key, result);
         }
