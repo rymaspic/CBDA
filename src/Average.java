@@ -31,7 +31,7 @@ public class Average {
     }
 
     public static class AveReducer
-            extends Reducer<Text, IntWritable, Text, IntWritable> {
+            extends Reducer<Text, IntWritable, Text, DoubleWritable> {
 
         public void reduce(Text key, Iterable<IntWritable> values,
                            Context context
