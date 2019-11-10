@@ -7,6 +7,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -49,8 +50,8 @@ public class Average {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "DataClean");
-        job.setJarByClass(DataClean.class);
+        Job job = Job.getInstance(conf, "Average");
+        job.setJarByClass(Average.class);
         job.setMapperClass(AveMapper.class);
         job.setCombinerClass(AveReducer.class);
         job.setReducerClass(AveReducer.class);
