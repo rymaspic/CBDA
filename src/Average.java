@@ -53,7 +53,7 @@ public class Average {
         Job job = Job.getInstance(conf, "Average");
         job.setJarByClass(Average.class);
         job.setMapperClass(AveMapper.class);
-        job.setCombinerClass(AveReducer.class);
+        //job.setCombinerClass(AveReducer.class);
         job.setReducerClass(AveReducer.class);
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
