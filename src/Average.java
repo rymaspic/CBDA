@@ -50,6 +50,7 @@ public class Average {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
+        conf.set("mapred.textoutputformat.separator", ",");
         Job job = Job.getInstance(conf, "Average");
         job.setJarByClass(Average.class);
         job.setMapperClass(AveMapper.class);
@@ -59,7 +60,6 @@ public class Average {
         job.setMapOutputValueClass(IntWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(DoubleWritable.class);
-        job.set("mapred.textoutputformat.separator", ",");
         job.setNumReduceTasks(1);
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
