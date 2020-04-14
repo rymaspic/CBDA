@@ -29,6 +29,7 @@ target/
 venv/
 # Inclusions
 !lib/**
+out/
 
 # Compiled Files
 *.class
