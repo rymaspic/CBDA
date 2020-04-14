@@ -9,7 +9,7 @@ By Xuankai Fang (xf569)
 - Format: CSV, to make consistent with my teammates, I re-saved it to TXT format.
 - Original Data Scheme: Trip Duration (seconds), Start Time and Date, Stop Time and Date, Start Station Name, End Station Name, Station ID, Station Lat/Long, Bike ID, User Type (Customer = 24-hour pass or 3-day pass user; Subscriber = Annual Member), Gender (Zero=unknown; 1=male; 2=female), Year of Birth.
   Example:
-  ![](citibike/F3E669EA-8C95-47BD-83B1-3106D97D596D.png)
+  ![](https://github.com/rymaspic/CBDA/blob/master/imgs/1-1.png)
 
 ## 2. Data Cleaning and Profiling
 1. Data Profiling (codes are in DataClean.java): 
