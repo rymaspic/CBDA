@@ -13,6 +13,7 @@ hs_err_pid*
 .classpath
 .project
 .settings/
+.gitignore
 
 # Intellij
 .idea/
@@ -25,7 +26,7 @@ hs_err_pid*
 # Maven
 log/
 target/
-
+venv/
 # Inclusions
 !lib/**
 
